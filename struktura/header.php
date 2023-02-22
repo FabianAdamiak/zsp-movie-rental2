@@ -8,8 +8,7 @@
     </head>
     <body>
         <header class="header">
-            <a href="/zsp-movie-rental2/index.php">zsp-movie-rental </a>
-            <span>text</span>
+            <a href="/zsp-movie-rental2/index.php">zsp-movie-rental2 </a>
         </header>
     </body>
 </html>

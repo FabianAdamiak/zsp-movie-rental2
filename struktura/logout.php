@@ -10,8 +10,8 @@
 </head>
     <body>
     <div class="a">
-        <h3>Zostałeś wylogowany</h3>
-        <button type="button"><a href="login.php">zaloguj ponownie</a></button><br></div>
+        <h3>Zostałeś wylogowany :)</h3>
+        <button type="button"><a href="login.php">zaloguj sie ponownie</a></button><br></div>
     </body>
 </html>
 

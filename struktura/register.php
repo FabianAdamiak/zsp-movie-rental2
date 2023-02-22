@@ -9,11 +9,11 @@
     <div class="wrapp">
         <?php
         if(isset($_POST["loginRegistration"]) && isset($_POST["passwordRegistration"])){
-            $con = new mysqli("localhost", "root", "", "movies");
+            $con = new mysqli("localhost", "root", "", "zsp-movie-rental2");
             $sql = "INSERT INTO `users` (`id`, `login`, `password`, `is_admin`) VALUES (NULL, '".$_POST["loginRegistration"]."', '".$_POST["passwordRegistration"]."', '0');";
             $con->query($sql);
             $con->close();
-            header("Location: ". "/zsp-movie rental2/sites/login.php");
+            header("Location: ". "/zsp-movie-rental2/login.php");
         }
         ?>
         <div class="header">
@@ -35,8 +35,6 @@
                 </div>
             </div>
         </div>
-
-        <?php include $_SERVER['DOCUMENT_ROOT'].'/zsp-movie rental2/includes/footer.php'; ?>
     </div>
 </body>
 </html>
