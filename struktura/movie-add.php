@@ -1,8 +1,8 @@
 <?php 
     if((isset($_POST["title"]) && isset($_POST["year"]) && isset($_POST["genere"]))
-    && (!empty($_POST["title"]) && !empty($_POST["year"]) && !empty($_POST["length"]) && !empty($_POST["genere"]))){
+    && (!empty($_POST["title"]) && !empty($_POST["year"]) && !empty($_POST["genere"]))){
         $con = new mysqli("localhost", "root", "", "movies");
-        $sql = "INSERT INTO `movies` (`id`, `name`, `year`,`genere_id`,`user_id`, `admin_id`, `renter_id`) VALUES (NULL, '".$_POST["title"]."', '".$_POST["year"]."', '".$_POST["length"]."', '".$_POST["genere"]."', '".$_SESSION["id"]."', NULL, NULL);";
+        $sql = "INSERT INTO `movies` (`id`, `name`, `year`,`genere_id`,`user_id`, `admin_id`, `renter_id`) VALUES (NULL, '".$_POST["title"]."', '".$_POST["year"]."', '".$_POST["genere"]."', '".$_SESSION["id"]."', NULL, NULL);";
         $con->query($sql);
         header("Location: ". "movie-my.php");
     }

@@ -15,8 +15,8 @@
             <div class="aside">
                 <h1>Twoje filmy</h1>
                 <?php
-                    $con = new mysqli("localhost", "root", "", "movies");
-                    $sql = "SELECT `id`, `name`, `year`, `admin_id` FROM `movies` WHERE `user_id` = '".$_SESSION["id"]."';";
+                    $con = new mysqli("localhost", "root", "", "zsp-movie-rental2");
+                    $sql = "SELECT  `id`, `name`, `year`, `admin_id` FROM `movies` WHERE `user_id` = '".$_SESSION["id"]."';";
                     $res = $con->query($sql);
                     if(mysqli_num_rows($res) > 0){
                         while($row = $res->fetch_assoc()){
@@ -37,17 +37,7 @@
 
                 <h1>Wypożyczane</h1>
                 <?php
-                    $sql = "SELECT `id`, `name`, `year` FROM `movies` WHERE `renter_id` = '".$_SESSION["id"]."';";
-                    $res = $con->query($sql);
-                    if(mysqli_num_rows($res) > 0){
-                        while($row = $res->fetch_assoc()){
-                            echo "<a class='card' href='/movie-details.php?movieId=".$row["id"]."'>";
-                            echo "<p>".$row["name"]."</p>";
-                            echo "<p>".$row["year"]."r.</p>";
-                            echo "</a>";
-                        }
-                    }
-                    else{
+                   {
                         echo "<div style='display: flex; flex-direction: column; align-content: center; justify-content: center; align-items: center;'>";
                         echo "<h2>Nie wypożyczasz jeszcze żadnego filmu!</h2>";
                         echo "<a class='headerLink' href='movie-search.php'>Szukaj film!</a>";

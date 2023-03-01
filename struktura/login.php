@@ -17,7 +17,7 @@
         $q = "SELECT id FROM users WHERE login='".$_POST['login']."'";
         $res = $db -> query($q);
         $d = $res->fetch_all(MYSQLI_ASSOC);
-        $_SESSION["id"] = $d;
+        $_SESSION["id"] = $d[0]["id"];
     header("location: index.php");
     }
     echo "<a href='register.php'>Nie posiadasz konta? Tutaj mozesz sie zarejstrowac!</a>";
